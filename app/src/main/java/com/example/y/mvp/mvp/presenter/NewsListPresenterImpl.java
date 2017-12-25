@@ -21,8 +21,6 @@ public class NewsListPresenterImpl extends Base4ViewPresenterImpl<BaseView.NewsL
         super(view);
         this.newsListModel = new NewsListModelImpl();
     }
-
-
     @Override
     public void requestNetWork(int id, int page, boolean isNull) {
         if (page == 1) {
@@ -34,12 +32,10 @@ public class NewsListPresenterImpl extends Base4ViewPresenterImpl<BaseView.NewsL
         }
         newsListModel.netWorkNewList(id, page, this);
     }
-
     @Override
     public void onClick(NewsListInfo info) {
         NewsDetailActivity.startIntent(info.getId());
     }
-
 
     @Override
     public void onSuccess(List<NewsListInfo> tngou) {
@@ -47,11 +43,11 @@ public class NewsListPresenterImpl extends Base4ViewPresenterImpl<BaseView.NewsL
         mView.hideFoot();
         mView.hideProgress();
     }
-
     @Override
     public void onFail() {
         mView.hideFoot();
         mView.hideProgress();
         mView.netWorkError();
     }
+
 }

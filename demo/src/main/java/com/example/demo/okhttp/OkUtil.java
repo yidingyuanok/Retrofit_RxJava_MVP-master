@@ -1,5 +1,6 @@
 package com.example.demo.okhttp;
 
+
 import com.example.demo.bean.TabNameBean;
 import com.google.gson.Gson;
 
@@ -110,6 +111,14 @@ public class OkUtil {
 
             }
         });
+
+
+
+        try {
+            Response response = call.execute();
+        } catch (IOException e) {
+
+        }
 
 
     }

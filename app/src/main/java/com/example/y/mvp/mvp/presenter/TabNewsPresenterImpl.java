@@ -14,15 +14,12 @@ import java.util.List;
 public class TabNewsPresenterImpl extends Base4ViewPresenterImpl<BaseView.TabNewsView>
         implements Presenter.TabNewsPresenter, DataListener.TabNewsData {
 
-
     private final BaseModel.TabNewsModel tabNewsModel;
 
     public TabNewsPresenterImpl(BaseView.TabNewsView view) {
         super(view);
         this.tabNewsModel = new TabNewsModelImpl();
     }
-
-
     @Override
     public void requestNetWork() {
         tabNewsModel.netWork(this);
@@ -32,7 +29,6 @@ public class TabNewsPresenterImpl extends Base4ViewPresenterImpl<BaseView.TabNew
     public void onSuccess(List<TabNewsInfo> newsInfo) {
         mView.setData(newsInfo);
     }
-
     @Override
     public void onFail() {
         mView.netWorkError();

@@ -106,5 +106,4 @@ public class L {
             Log.i(TAG, localDate() + MTAG + msg);
     }
 
-
 }

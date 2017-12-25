@@ -24,6 +24,26 @@ import rx.schedulers.Schedulers;
 
 public class RxjavaUtil {
 
+
+
+
+    public void test() {
+
+
+
+
+
+        Observable observable = Observable.create(new Observable.OnSubscribe<String>() {
+            @Override
+            public void call(Subscriber<? super String> subscriber) {
+                subscriber.onNext("Hello");
+                subscriber.onCompleted();
+            }
+        });
+
+
+    }
+
     public static void getTabNamesByRxjava(Subscriber<TabNameBean> subscriber) {
 
         Retrofit retrofit = new Retrofit.Builder()
