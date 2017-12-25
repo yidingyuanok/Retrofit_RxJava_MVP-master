@@ -28,6 +28,7 @@ public class RxjavaAct extends Activity {
     }
 
     private void test2() {
+        Log.d(TAG, "test2() called");
         final Observable<String> testCreateObservable = Observable.create(new ObservableOnSubscribe<String>() {
             @Override
             public void subscribe(ObservableEmitter<String> e) throws Exception {
@@ -42,7 +43,7 @@ public class RxjavaAct extends Activity {
                 return Integer.parseInt(s);
             }
         });
-        
+
         map.subscribe(new Observer<Integer>() {
             @Override
             public void onSubscribe(Disposable d) {
