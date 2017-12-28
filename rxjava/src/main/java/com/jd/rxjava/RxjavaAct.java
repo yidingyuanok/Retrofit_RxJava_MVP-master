@@ -3,6 +3,7 @@ package com.jd.rxjava;
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
 
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
@@ -21,8 +22,22 @@ public class RxjavaAct extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        test1();
-        test2();
+        final TextView tv = findViewById(R.id.tv);
+        int minWidth = tv.getMinWidth();
+        Log.d(TAG, "onCreate() called with: minWidth = [" + minWidth + "]");
+
+//        test1();
+//        test2();
+        tv.post(new Runnable() {
+            @Override
+            public void run() {
+                int minWidth = tv.getMinWidth();
+                Log.d(TAG, "onCreate() called with: minWidth = [" + minWidth + "]");
+                Log.d(TAG, "onCreate() called with: minWidth = [" + tv.getMeasuredWidth() + "]");
+
+
+            }
+        });
 
 
     }
