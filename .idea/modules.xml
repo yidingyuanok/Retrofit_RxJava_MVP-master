@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Retrofit_RxJava_MVP-master.iml" filepath="$PROJECT_DIR$/Retrofit_RxJava_MVP-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/alib/alib.iml" filepath="$PROJECT_DIR$/alib/alib.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/demo/demo.iml" filepath="$PROJECT_DIR$/demo/demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/rxjava/rxjava.iml" filepath="$PROJECT_DIR$/rxjava/rxjava.iml" />

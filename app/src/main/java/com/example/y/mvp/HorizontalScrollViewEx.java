@@ -1,4 +1,4 @@
-package com.jd.rxjava;
+package com.example.y.mvp;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -37,7 +37,7 @@ public class HorizontalScrollViewEx extends ViewGroup {
     }
 
     public HorizontalScrollViewEx(Context context, AttributeSet attrs,
-            int defStyle) {
+                                  int defStyle) {
         super(context, attrs, defStyle);
         init();
     }
@@ -114,11 +114,12 @@ public class HorizontalScrollViewEx extends ViewGroup {
             mVelocityTracker.computeCurrentVelocity(1000);
             float xVelocity = mVelocityTracker.getXVelocity();
             if (Math.abs(xVelocity) >= 50) {
+                // 速度大于0，表示从左往右滑
                 mChildIndex = xVelocity > 0 ? mChildIndex - 1 : mChildIndex + 1;
             } else {
                 mChildIndex = (scrollX + mChildWidth / 2) / mChildWidth;
             }
-            mChildIndex = Math.max(0, Math.min(mChildIndex, mChildrenSize - 1));
+            mChildIndex = Math.max(0, Math.min(mChildIndex, mChildrenSize - 1));  // 边界问题
             int dx = mChildIndex * mChildWidth - scrollX;
             smoothScrollBy(dx, 0);
             mVelocityTracker.clear();

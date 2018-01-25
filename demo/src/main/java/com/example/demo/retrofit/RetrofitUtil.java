@@ -6,6 +6,7 @@ import com.example.demo.bean.User;
 import com.example.demo.okhttp.L;
 import com.example.demo.okhttp.OkUtil;
 
+import java.io.IOException;
 import java.util.HashMap;
 
 import okhttp3.OkHttpClient;
@@ -23,7 +24,7 @@ public class RetrofitUtil {
 
 
 
-    public static void getTabNewsByRetrofit(){
+    public static void getTabNewsByRetrofit() throws IOException {
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(APIService.BASE_URL)
@@ -48,6 +49,8 @@ public class RetrofitUtil {
                 L.e("getTabNewsByRetrofit error : "  + t.toString());
             }
         });
+
+        Response<TabNameBean> reponse = tabNames.execute();
 
     }
 

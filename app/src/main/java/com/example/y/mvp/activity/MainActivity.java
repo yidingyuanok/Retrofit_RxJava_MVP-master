@@ -17,8 +17,8 @@ import com.example.y.mvp.fragment.ImageNewFragment;
 import com.example.y.mvp.fragment.ImageViewPagerFragment;
 import com.example.y.mvp.fragment.JokeMainPagerFragment;
 import com.example.y.mvp.fragment.NewsViewPagerFragment;
-import com.example.y.mvp.mvp.presenter.Presenter;
 import com.example.y.mvp.mvp.presenter.MainViewPresenterImpl;
+import com.example.y.mvp.mvp.presenter.Presenter;
 import com.example.y.mvp.mvp.view.BaseView;
 import com.example.y.mvp.utils.ActivityCollector;
 import com.example.y.mvp.utils.UIUtils;
@@ -43,6 +43,7 @@ public class MainActivity extends BaseActivity implements BaseView.MainView {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         init();
+
     }
 
 
